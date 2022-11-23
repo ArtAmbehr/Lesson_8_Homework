@@ -17,14 +17,14 @@ int columns = int.Parse(Console.ReadLine());
 int[,] array = GetArray(rows, columns, 0, 10);
 PrintArray(array);
 
-int[,] GetArray(int m, int n, int minValue, int maxValue)  // int[,] это означает двухмерный массив. int[,,] это означает трехмерный массив. Сюда мы положили наши 4 и 5, и мин./макс.значения
+int[,] GetArray(int m, int n, int minValue, int maxValue)
 {
     int[,] result = new int[m,n];
-    for (int i = 0; i < m; i++) // в этом цикле первая переменная равна нулю
+    for (int i = 0; i < m; i++)
     {
-        for (int j = 0; j < n; j++) // и в этом цикле первая переменная равна нулю, т.е., мы начинаем с верхнего левого угла нашей таблицы.
+        for (int j = 0; j < n; j++)
         {
-            result[i,j] = new Random(). Next(minValue,maxValue+1); // здесь массив будет рандомно заполняться, пока не достигнет кол-ва 4 строк и 5 столбцов
+            result[i,j] = new Random(). Next(minValue,maxValue+1);
         }
     }
     return result;
@@ -32,17 +32,15 @@ int[,] GetArray(int m, int n, int minValue, int maxValue)  // int[,] это оз
 
 void PrintArray(int[,] inArray)
 {
- for (int i = 0; i < inArray.GetLength(0); i++) // если строка, то в скобках 0
+ for (int i = 0; i < inArray.GetLength(0); i++)
     {
-        for (int j = 0; j < inArray.GetLength(1); j++) // если столбец, то в скобках 1
+        for (int j = 0; j < inArray.GetLength(1); j++)
         {
             Console.Write($"{inArray[i,j]}  ");
         }
-        Console.WriteLine(); // чтобы был красивый вывод массива
+        Console.WriteLine();
     }    
 }
-
-// Метод
 
 int[,] DescendingRowSort(int[,] array)
 {
@@ -59,7 +57,6 @@ int[,] DescendingRowSort(int[,] array)
             array[i, j] = array[i, minPosition];                            
             array[i, minPosition] = tmp;                                    
         }
-
     }
     return array;
 }
