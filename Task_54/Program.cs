@@ -67,12 +67,12 @@ void PrintTable(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            System.Console.Write(matrix[i, j] + "  ");
+            Console.Write(matrix[i, j] + "  ");
         }
-        System.Console.WriteLine();
+        Console.WriteLine();
     }
 }
 
-System.Console.WriteLine();
+Console.WriteLine();
 int[,] sortRows = DescendingRowSort(array);
 PrintTable(sortRows);
